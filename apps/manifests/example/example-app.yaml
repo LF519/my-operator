@@ -1,0 +1,11 @@
+apiVersion: myapp.k8s.io/v1
+kind: App
+metadata:
+  name: example-app
+spec:
+  deployment:
+    name: example-app
+    image: nginx:latest
+    replicas: 2
+  service:
+    name: example-app
