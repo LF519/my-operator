@@ -21,7 +21,7 @@ package fake
 import (
 	"context"
 
-	myappv1 "github.com/cloudnative/summarize/apps/pkg/apis/myapp/v1"
+	myappv1 "github.com/my-operator/apps/pkg/apis/myapp/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

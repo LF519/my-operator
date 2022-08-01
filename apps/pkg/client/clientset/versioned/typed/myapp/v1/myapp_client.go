@@ -21,8 +21,8 @@ package v1
 import (
 	"net/http"
 
-	v1 "github.com/cloudnative/summarize/apps/pkg/apis/myapp/v1"
-	"github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned/scheme"
+	v1 "github.com/my-operator/apps/pkg/apis/myapp/v1"
+	"github.com/my-operator/apps/pkg/client/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 

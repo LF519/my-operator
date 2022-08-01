@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned"
-	myappv1 "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned/typed/myapp/v1"
-	fakemyappv1 "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned/typed/myapp/v1/fake"
+	clientset "github.com/my-operator/apps/pkg/client/clientset/versioned"
+	myappv1 "github.com/my-operator/apps/pkg/client/clientset/versioned/typed/myapp/v1"
+	fakemyappv1 "github.com/my-operator/apps/pkg/client/clientset/versioned/typed/myapp/v1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

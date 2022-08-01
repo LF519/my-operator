@@ -1,4 +1,4 @@
-module github.com/cloudnative/summarize/apps
+module github.com/my-operator/apps
 
 go 1.17
 

@@ -9,8 +9,8 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/klog/v2"
 
-	appClientset "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned"
-	appInformers "github.com/cloudnative/summarize/apps/pkg/client/informers/externalversions"
+	appClientset "github.com/my-operator/apps/pkg/client/clientset/versioned"
+	appInformers "github.com/my-operator/apps/pkg/client/informers/externalversions"
 )
 
 var (

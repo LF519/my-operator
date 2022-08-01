@@ -19,8 +19,8 @@ limitations under the License.
 package myapp
 
 import (
-	internalinterfaces "github.com/cloudnative/summarize/apps/pkg/client/informers/externalversions/internalinterfaces"
-	v1 "github.com/cloudnative/summarize/apps/pkg/client/informers/externalversions/myapp/v1"
+	internalinterfaces "github.com/my-operator/apps/pkg/client/informers/externalversions/internalinterfaces"
+	v1 "github.com/my-operator/apps/pkg/client/informers/externalversions/myapp/v1"
 )
 
 // Interface provides access to each of this group's versions.
