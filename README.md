@@ -1,6 +1,6 @@
 分享一个简单的`operator`的编写
 
-> 为了理解的更加深刻, 以下案例不使用`kuberbuilder`, 只使用了`code-generator`, 代码的编写参考了极客时间张磊老师的`深入剖析 Kubernetes`和https://github.com/kubernetes/sample-controller项目
+> 为了理解的更加深刻, 以下案例不使用`kuberbuilder`, 只使用了`code-generator`, 代码的编写参考了极客时间张磊老师的`深入剖析 Kubernetes`和https://github.com/kubernetes/sample-controller
 
 ### 需求
 
