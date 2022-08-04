@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"net/http"
 
-	myappv1 "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned/typed/myapp/v1"
+	myappv1 "github.com/my-operator/apps/pkg/client/clientset/versioned/typed/myapp/v1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

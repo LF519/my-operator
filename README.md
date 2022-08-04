@@ -22,10 +22,10 @@
 
 #### 创建工程
 
-  *  创建项目`apps`, 目录如下:
+  *  在`GOPATH`路径下创建项目`github.com/my-operator/apps`, 目录如下:
   
      ```shell
-     root@node1:~/go/src/github.com/cloudnative/summarize/apps# tree .
+     root@node1:~/go/src/github.com/apps# tree .
      .
      ├── controller.go
      ├── main.go
@@ -50,7 +50,8 @@
   *  使用`go moudle`初始化项目
   
      ```shell
-     root@node1:~/go/src/github.com/cloudnative/summarize/apps# go mod init "github.com/cloudnative/summarize/apps"
+     cd ~/go/src/github.com/my-operator/apps
+     go mod init "github.com/my-operator/apps"
      ```
 
 
@@ -218,7 +219,7 @@
   	"k8s.io/apimachinery/pkg/runtime"
   	"k8s.io/apimachinery/pkg/runtime/schema"
   
-  	apps "github.com/cloudnative/summarize/apps/pkg/apis/myapp"
+  	apps "github.com/my-operator/apps/pkg/apis/myapp"
   )
   
   // SchemeGroupVersion is group version used to register these objects
@@ -257,13 +258,16 @@
 
   ```shell
   # 必须在项目路径下, 否则导包会有问题
-  cd ~/go/src/github.com/cloudnative/summarize/apps
+  cd ~/go/src/github.com/my-operator/apps
+  
+  # 执行go mod tidy, 下载缺失的依赖
+  go mod tidy
   
   # code-generator代码路径
   CODE_GENERATOR_PATH="/root/go/src/github.com/code-generator"
   
   # 代码生成的工作目录，也就是我们的项目路径($GOPATH后面的部分), 同时也应该是我们的包名, 否则会失败
-  ROOT_PACKAGE="github.com/cloudnative/summarize/apps"
+  ROOT_PACKAGE="github.com/my-operator/apps"
   
   # API Group
   CUSTOM_RESOURCE_NAME="myapp"
@@ -271,10 +275,10 @@
   CUSTOM_RESOURCE_VERSION="v1"
   
   # output-base的位置也要注意, 是要从当前位置一直..到GOPATH的路径, 否则生成的代码的路径会跳到别的地方, -v 10是用来查看脚本运行信息的, 不加该参数的话, 看不到具体的报错信息
-  "$CODE_GENERATOR_PATH"/generate-groups.sh all "$ROOT_PACKAGE/pkg/client" "$ROOT_PACKAGE/pkg/apis" "$CUSTOM_RESOURCE_NAME:$CUSTOM_RESOURCE_VERSION" --go-header-file="$CODE_GENERATOR_PATH"/hack/boilerplate.go.txt --output-base ../../../..  -v 10
+  "$CODE_GENERATOR_PATH"/generate-groups.sh all "$ROOT_PACKAGE/pkg/client" "$ROOT_PACKAGE/pkg/apis" "$CUSTOM_RESOURCE_NAME:$CUSTOM_RESOURCE_VERSION" --go-header-file="$CODE_GENERATOR_PATH"/hack/boilerplate.go.txt --output-base ../../..  -v 10
   
   # 代码生成成功后的文件目录结构如下
-  root@node1:~/go/src/github.com/cloudnative/summarize/apps# tree .
+  root@node1:~/go/src/github.com/my-operator/apps# tree .
   .
   ├── controller.go
   ├── go.mod
@@ -335,7 +339,7 @@
                       └── expansion_generated.go
   
   ```
-
+  
   
 
 ##### 控制器逻辑
@@ -354,8 +358,8 @@
   	"k8s.io/client-go/tools/clientcmd"
   	"k8s.io/klog/v2"
   
-  	appClientset "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned"
-  	appInformers "github.com/cloudnative/summarize/apps/pkg/client/informers/externalversions"
+  	appClientset "github.com/my-operator/apps/pkg/client/clientset/versioned"
+  	appInformers "github.com/my-operator/apps/pkg/client/informers/externalversions"
   )
   
   var (
@@ -441,11 +445,11 @@
   	"k8s.io/client-go/util/workqueue"
   	"k8s.io/klog/v2"
   
-  	appV1 "github.com/cloudnative/summarize/apps/pkg/apis/myapp/v1"
-  	myappClientset "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned"
-  	"github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned/scheme"
-  	myappInformers "github.com/cloudnative/summarize/apps/pkg/client/informers/externalversions/myapp/v1"
-  	myappListers "github.com/cloudnative/summarize/apps/pkg/client/listers/myapp/v1"
+  	appV1 "github.com/my-operator/apps/pkg/apis/myapp/v1"
+  	myappClientset "github.com/my-operator/apps/pkg/client/clientset/versioned"
+  	"github.com/my-operator/apps/pkg/client/clientset/versioned/scheme"
+  	myappInformers "github.com/my-operator/apps/pkg/client/informers/externalversions/myapp/v1"
+  	myappListers "github.com/my-operator/apps/pkg/client/listers/myapp/v1"
   )
   
   const (
@@ -705,6 +709,7 @@
   > 在主节点上直接运行
 
   ```shell
+  go mod tidy
   go run . --kubeconfig=/root/.kube/config
   ```
 

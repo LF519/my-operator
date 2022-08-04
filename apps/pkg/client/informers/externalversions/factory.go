@@ -23,9 +23,9 @@ import (
 	sync "sync"
 	time "time"
 
-	versioned "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned"
-	internalinterfaces "github.com/cloudnative/summarize/apps/pkg/client/informers/externalversions/internalinterfaces"
-	myapp "github.com/cloudnative/summarize/apps/pkg/client/informers/externalversions/myapp"
+	versioned "github.com/my-operator/apps/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/my-operator/apps/pkg/client/informers/externalversions/internalinterfaces"
+	myapp "github.com/my-operator/apps/pkg/client/informers/externalversions/myapp"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

@@ -22,11 +22,11 @@ import (
 	"k8s.io/client-go/util/workqueue"
 	"k8s.io/klog/v2"
 
-	appV1 "github.com/cloudnative/summarize/apps/pkg/apis/myapp/v1"
-	myappClientset "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned"
-	"github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned/scheme"
-	myappInformers "github.com/cloudnative/summarize/apps/pkg/client/informers/externalversions/myapp/v1"
-	myappListers "github.com/cloudnative/summarize/apps/pkg/client/listers/myapp/v1"
+	appV1 "github.com/my-operator/apps/pkg/apis/myapp/v1"
+	myappClientset "github.com/my-operator/apps/pkg/client/clientset/versioned"
+	"github.com/my-operator/apps/pkg/client/clientset/versioned/scheme"
+	myappInformers "github.com/my-operator/apps/pkg/client/informers/externalversions/myapp/v1"
+	myappListers "github.com/my-operator/apps/pkg/client/listers/myapp/v1"
 )
 
 const (

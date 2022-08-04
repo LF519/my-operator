@@ -5,7 +5,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	apps "github.com/cloudnative/summarize/apps/pkg/apis/myapp"
+	apps "github.com/my-operator/apps/pkg/apis/myapp"
 )
 
 // SchemeGroupVersion is group version used to register these objects

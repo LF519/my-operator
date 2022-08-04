@@ -22,8 +22,8 @@ import (
 	"context"
 	"time"
 
-	v1 "github.com/cloudnative/summarize/apps/pkg/apis/myapp/v1"
-	scheme "github.com/cloudnative/summarize/apps/pkg/client/clientset/versioned/scheme"
+	v1 "github.com/my-operator/apps/pkg/apis/myapp/v1"
+	scheme "github.com/my-operator/apps/pkg/client/clientset/versioned/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"
