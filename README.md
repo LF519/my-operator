@@ -31,7 +31,7 @@
      ├── main.go
      ├── manifests
      │   ├── crd
-     │   │   └── app.yaml
+     │   │   └── app-crd.yaml
      │   └── example
      │       └── example-app.yaml
      └── pkg
